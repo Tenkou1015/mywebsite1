@@ -19,10 +19,14 @@ header {
 }
 
 .logo-text {
-    font-size: 24px;
+    font-size: 24px; /* 调整为更大的字体大小 */
     font-weight: bold;
     color: #fff;
     margin: 0;
+}
+
+.menu-toggle {
+    display: none; /* 默认隐藏 */
 }
 
 nav ul {
@@ -48,10 +52,67 @@ nav ul li a:hover {
 }
 
 footer {
-    background-color: #8b4513; /* 深咖啡色 */
+    background-color: #8b4513;
+    padding: 20px;
+    color: #fff;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1px; /* 进一步减小间距 */
+}
+
+.social-buttons a {
+    display: inline-block;
+    margin: 0 10px;
     padding: 10px;
-    margin-top: 20px;
-    color: #fff; /* 白色文字 */
+    border-radius: 5px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+}
+
+footer nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end; /* 靠右对齐 */
+    margin: 10px 0;
+}
+
+footer nav ul li {
+    margin: 0 15px;
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+}
+
+footer nav ul li a:hover {
+    color: #d2b48c;
 }
 
 #menu-list {
@@ -101,13 +162,25 @@ footer {
 /* 添加媒体查询以增强响应式设计 */
 @media (max-width: 768px) {
     nav ul {
-        display: flex;
+        display: none; /* 隐藏导航栏 */
         flex-direction: column;
-        align-items: center;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #8b4513;
+        width: 100%;
     }
 
     nav ul li {
         margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+        color: #fff;
+        font-size: 24px;
+        margin-left: auto; /* 将汉堡菜单推到右边 */
     }
 
     #menu-list, #gallery {
@@ -117,6 +190,20 @@ footer {
 
     .menu-item, .gallery-item {
         width: 80%;
+    }
+
+    .social-buttons {
+        justify-content: center;
+    }
+}
+
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none; /* 大屏幕上隐藏汉堡菜单 */
+    }
+
+    .social-buttons {
+        justify-content: flex-end;
     }
 }
 
@@ -128,31 +215,4 @@ footer {
     .menu-item, .gallery-item {
         width: 100%;
     }
-}
-
-.social-buttons {
-    margin-top: 10px;
-}
-
-.social-buttons a {
-    display: inline-block;
-    margin: 0 10px;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-.social-icon {
-    width: 30px; /* 根据需要调整图标大小 */
-    height: 30px;
-}
-
-.line-button,
-.instagram-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.social-buttons a:hover {
-    opacity: 0.8;
 }
