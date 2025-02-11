@@ -3,34 +3,55 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
+    background-color: #f5f5dc; /* 浅咖啡色背景 */
 }
 
 header {
-    background-color: #6b4f4f;
-    color: white;
+    background-color: #8b4513; /* 深咖啡色 */
     padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin: 0;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    margin: 0;
 }
 
 nav ul li {
-    display: inline;
     margin: 0 15px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #6b4f4f;
+    color: #fff; /* 白色文字 */
     font-weight: bold;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: #d2b48c; /* 浅咖啡色悬停效果 */
 }
 
 footer {
-    background-color: #f4f4f4;
+    background-color: #8b4513; /* 深咖啡色 */
     padding: 10px;
     margin-top: 20px;
+    color: #fff; /* 白色文字 */
 }
 
 #menu-list {
@@ -75,4 +96,63 @@ footer {
 
 .gallery-item p {
     margin-top: 10px;
+}
+
+/* 添加媒体查询以增强响应式设计 */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    #menu-list, #gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item, .gallery-item {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    .menu-item, .gallery-item {
+        width: 100%;
+    }
+}
+
+.social-buttons {
+    margin-top: 10px;
+}
+
+.social-buttons a {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.social-icon {
+    width: 30px; /* 根据需要调整图标大小 */
+    height: 30px;
+}
+
+.line-button,
+.instagram-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-buttons a:hover {
+    opacity: 0.8;
 }
